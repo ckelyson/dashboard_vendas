@@ -71,4 +71,7 @@ with coluna1:
     nome_arquivo = st.text_input('', label_visibility = 'collapsed', value = 'dados')
     nome_arquivo += '.csv'
 with coluna2:
+    st.download_button('Fazer o download da tabela em csv', data = converte_csv(dados_filtrados), file_name = nome_arquivo, mime = 'text/csv', on_click = mensagem_sucesso)text_input('', label_visibility = 'collapsed', value = 'dados')
+    nome_arquivo += '.csv'
+with coluna2:
     st.download_button('Fazer o download da tabela em csv', data = converte_csv(dados_filtrados), file_name = nome_arquivo, mime = 'text/csv', on_click = mensagem_sucesso)
