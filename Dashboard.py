@@ -25,10 +25,6 @@ def formatar_quantidade(valor):
         valor_formatado = f"{valor / 1:,.2f} mil"
     return valor_formatado.replace(',', 'X').replace('.', ',').replace('X', '.')
 
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
-def formatar_valor_brasileiro(valor):
-    return locale.format_string('%.2f', valor, grouping=True)
-
 
 
 st.title('DASHBOARD DE VENDAS :shopping_trolley:')
