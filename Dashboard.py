@@ -68,7 +68,7 @@ dados['Data da Compra'] = pd.to_datetime(dados['Data da Compra'])
 receita_mensal = dados.set_index('Data da Compra').groupby(pd.Grouper(freq='M'))['Preço'].sum().reset_index()
 receita_mensal['Ano'] = receita_mensal['Data da Compra'].dt.year
 receita_mensal['Mes'] = receita_mensal['Data da Compra'].dt.month_name()
-receita_mensal['ValorFormatado'] = receita_mensal['Preço'].apply(formatar_valor_brasileiro)
+receita_mensal['ValorFormatado'] = receita_mensal['Preço'].apply(formatar_valor)
 
 receita_categorias = dados.groupby('Categoria do Produto')[['Preço']].sum().sort_values('Preço', ascending=False)
 receita_categorias['PreçoFormatado'] = receita_categorias['Preço'].apply(formatar_valor)
